@@ -44,6 +44,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Roles", value=len(ctx.message.server.roles), inline=True)
     embed.add_field(name="Members", value=len(ctx.message.server.members))
     embed.set_thumbnail(url=ctx.message.server.icon_url)
+    embed.add_field(name="Makers", value="Developed by- <@366125961206300673> & 24/7 hosted by <@277695189131460609>")
     await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
