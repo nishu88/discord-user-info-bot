@@ -37,9 +37,9 @@ async def botinfo(ctx, user: discord.Member):
     
 @bot.command(pass_context=True)
 async def serverinfo(ctx):
-    embed = discord.Embed(name="{}'s info".format(ctx.message.server.name), description="Trivia Victors", color=0x00ff00)
-    embed.set_author(name="Here is your server info")
-    embed.add_field(name="Name", value=ctx.message.server.name, inline=True)
+    embed = discord.Embed(name="{}'s info".format(ctx.message.server.name), description="Here is your server info", color=0x00ff00)
+    embed.set_author(name="Server Info")
+    embed.add_field(name="Name", value="Trivia Victors", inline=True)
     embed.add_field(name="ID", value=ctx.message.server.id, inline=True)
     embed.add_field(name="Roles", value=len(ctx.message.server.roles), inline=True)
     embed.add_field(name="Members", value=len(ctx.message.server.members))
