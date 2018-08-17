@@ -50,6 +50,10 @@ async def serverinfo(ctx):
 @bot.command(pass_context=True)
 async def kick(ctx, user: discord.Member):
     await bot.say(":boot: Cya, {}. Ya loser!".format(user.name))
+    
+@bot.command(pass_context=True)
+async def ban(ctx, user: discord.Member):
+    await bot.say(":boot: Get lost , {}. Rip loser!".format(user.name))    
 
 @bot.command(pass_context=True)
 async def hi(ctx, user: discord.Member):
