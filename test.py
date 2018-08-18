@@ -15,9 +15,9 @@ async def on_ready():
 async def ping(ctx):
     await bot.say(":ping_pong: ping!! xSSS")
     print ("user has pinged")
-
+    
 @bot.command(pass_context=True)
-async def about(ctx, user: discord.Member):
+async def info(ctx, user: discord.Member):
     embed = discord.Embed(title="{}'s Info".format(user.name), description="Member", color=0x00ff00)
     embed.add_field(name="Name", value=user.name, inline=True)
     embed.add_field(name="ID", value=user.id, inline=True)
@@ -26,7 +26,8 @@ async def about(ctx, user: discord.Member):
     embed.add_field(name="Joined", value=user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
     embed.add_field(name="Maker", value="Developed by- <@366125961206300673> & 24/7 hosted by <@277695189131460609>")
-    await bot.say(embed=embed)
+    await bot.say(embed=embed)    
+
 
 @bot.command(pass_context=True)
 async def serverinfo(ctx):
