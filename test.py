@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-bot = commands.Bot(command_prefix='#')
+bot = commands.Bot(command_prefix='?')
 
 print (discord.__version__)
 
@@ -15,7 +15,7 @@ async def on_ready():
 async def ping(ctx):
     await bot.say(":ping_pong: ping!! xSSS")
     print ("user has pinged")
-    
+
 @bot.command(pass_context=True)
 async def info(ctx, user: discord.Member):
     embed = discord.Embed(title="{}'s Info".format(user.name), description="Member", color=0x00ff00)
@@ -26,8 +26,7 @@ async def info(ctx, user: discord.Member):
     embed.add_field(name="Joined", value=user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
     embed.add_field(name="Maker", value="Developed by- <@366125961206300673> & 24/7 hosted by <@277695189131460609>")
-    await bot.say(embed=embed)    
-
+    await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
 async def serverinfo(ctx):
