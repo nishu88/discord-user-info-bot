@@ -27,7 +27,7 @@ async def info(ctx, user: discord.Member):
     embed.add_field(name="Highest role", value=user.top_role)
     embed.add_field(name="Joined", value=user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
-    embed.add_field(name="Makers", value="Developed by- <@366125961206300673> & 24/7 hosted by <@277695189131460609>")
+    embed.add_field(name="Maker", value="Developed by- <@366125961206300673> & 24/7 Hosted by- <@277695189131460609> ")
     await bot.say(embed=embed)
     
 @bot.command(pass_context=True)
