@@ -28,6 +28,31 @@ async def info(ctx, user: discord.Member):
     embed.set_thumbnail(url=user.avatar_url)
     embed.add_field(name="Maker", value="Developed by- <@366125961206300673> & 24/7 hosted by <@277695189131460609>")
     await bot.say(embed=embed)
+@bot.command(pass_context = True)
+async def memberstats(ctx):
+    online = 0
+    idle = 0
+    offline = 0
+    dnd = 0
+    bots = 0
+    server = ctx.message.server
+    for member in server.members:
+        if str(member.status) == "online":
+            online += 1
+        elif str(member.status) == "idle":
+            idle += 1
+        elif str(member.status) == "offline":
+            offline += 1
+        elif str(member.status) == "dnd":
+            dnd += 1
+    embed = discord.Embed(name="Members Stats", description="Members Stats list is here", color=0x0000ff)
+    embed.set_author(name="Members Stats")
+    embed.add_field(name="Online Members", value="Members= "+str(online))
+    embed.add_field(name="Idle", value="Members= "+str(idle))
+    embed.add_field(name="Dnd", value="Members= "+str(dnd))
+    embed.add_field(name="Offline", value="Members= "+str(offline))
+    await bot.say(embed=embed)
+
 
 @bot.command(pass_context=True)
 async def serverinfo(ctx):
